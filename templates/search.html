@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Search results for "{{ query }}"</h1>
+<ul class="list-group">
+{% for post in results %}
+  <li class="list-group-item">
+    <a href="/r/{{ post.subreddit }}/comments/{{ post.id }}">{{ post.title }}</a>
+    <small class="text-muted">in r/{{ post.subreddit }}</small>
+  </li>
+{% else %}
+  <li class="list-group-item">No results found.</li>
+{% endfor %}
+</ul>
+{% endblock %}
