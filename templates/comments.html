@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p class="text-muted">Posted in r/{{ subreddit }}</p>
+<hr>
+<h2>Comments</h2>
+<ul class="list-group">
+{% for comment in post.comments %}
+  <li class="list-group-item">
+    <p>{{ comment.body }}</p>
+  </li>
+{% endfor %}
+</ul>
+<a href="/r/{{ subreddit }}" class="btn btn-link mt-3">Back to Subreddit</a>
+{% endblock %}

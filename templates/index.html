@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Front Page</h1>
+<ul class="list-group">
+{% for post in posts %}
+  <li class="list-group-item">
+    <a href="/r/{{ post.subreddit }}/comments/{{ post.id }}">{{ post.title }}</a>
+    <small class="text-muted">in r/{{ post.subreddit }}</small>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}
